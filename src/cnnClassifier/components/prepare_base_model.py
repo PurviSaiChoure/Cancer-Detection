@@ -11,7 +11,8 @@ class PrepareBaseModel:
 
     
     def get_base_model(self):
-        self.model = tf.keras.applications.vgg16.VGG16(
+        # Load ResNet-50 as the base model
+        self.model = tf.keras.applications.resnet50.ResNet50(
             input_shape=self.config.params_image_size,
             weights=self.config.params_weights,
             include_top=self.config.params_include_top

@@ -9,7 +9,6 @@ from pathlib import Path
 class Training:
     def __init__(self, config: TrainingConfig):
         self.config = config
-
     
     def get_base_model(self):
         self.model = tf.keras.models.load_model(
@@ -17,7 +16,6 @@ class Training:
         )
 
     def train_valid_generator(self):
-
         datagenerator_kwargs = dict(
             rescale = 1./255,
             validation_split=0.20
